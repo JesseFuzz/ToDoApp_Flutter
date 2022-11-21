@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'pages/home_page.dart';
 
-void main() {
+void main() async {
+  //inciando o hive async e await
+  await Hive.initFlutter();
+  //abrir a caixa do hive, nos outros a gente só referencia com .box
+  var box = await Hive.openBox('myHiveBox');
+
   runApp(const MyApp());
 }
 
