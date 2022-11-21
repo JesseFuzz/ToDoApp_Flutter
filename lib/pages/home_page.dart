@@ -16,11 +16,14 @@ class _HomePageState extends State<HomePage> {
     ["Prova faculdade", false, "entregar a prova"]
   ];
 
-  get value => null;
+  // get value => null;
 
   //quando eu clicar no checkbox
-  void checkBoxChanged(bool? value, int? index) {
-    setState(() {});
+  void checkBoxChanged(bool? value, int index) {
+    setState(() {
+      //mudando de verdadeiro pra falso (ou contrário) o item que ta na posiçao 1 da lista
+      listaTarefas[index][1] = !listaTarefas[index][1];
+    });
   }
 
   @override
@@ -28,7 +31,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
-        title: const Text("Lista de Tarefas"),
+        title: Row(
+          //mainAxisAlignment foi pra centralizar o título da appbar
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text("Lista de Tarefas"),
+          ],
+        ),
         //retirando a sombra do appBar
         elevation: 0,
       ),
@@ -41,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             taskName: listaTarefas[index][0],
             isTaskCompleted: listaTarefas[index][1],
             taskDescription: listaTarefas[index][2],
-            onChanged: (value) => checkBoxChanged(),
+            onChanged: (value) => checkBoxChanged(value, index),
           );
         },
       ),
