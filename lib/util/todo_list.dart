@@ -28,7 +28,7 @@ class ToDoList extends StatelessWidget {
       child: Slidable(
         //end eu arrasto da direita (ou fim)
         endActionPane: ActionPane(
-          motion: StretchMotion(),
+          motion: const StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteFunction,
@@ -73,7 +73,7 @@ class ToDoList extends StatelessWidget {
                   ),
                   //descrição da tarefa
                   Text(
-                    '$taskDescription'.toUpperCase(),
+                    taskDescription.toUpperCase(),
                     style: const TextStyle(fontSize: 10),
                   )
                 ],

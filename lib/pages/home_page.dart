@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
     _controllerDescription.clear();
     _controllerTask.clear();
     //fecho a página após salvar
-    Navigator.of(context).pop;
+    Navigator.of(context).pop(true);
     //se salvar algo roda esse método do db para atualizar
     db.updateDataBase();
   }
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
           //fecho a página
           onCancel: (() => setState(
                 () {
-                  Navigator.of(context).pop;
+                  Navigator.of(context).pop(true);
                 },
               )),
         );
@@ -107,13 +107,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
-        title: Row(
-          //mainAxisAlignment foi pra centralizar o título da appbar
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text("Lista de Tarefas"),
-          ],
-        ),
+        title: const Text("Lista de Tarefas"),
+        centerTitle: true,
         //retirando a sombra do appBar
         elevation: 0,
       ),

@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MyButton extends StatelessWidget {
   //nome do botão
@@ -9,6 +6,7 @@ class MyButton extends StatelessWidget {
   //um método que nada retorna, o anterior retornava um bool
   VoidCallback onPressed;
   //passo no construtor:
+
   MyButton({super.key, required this.text, required this.onPressed});
 
   @override
