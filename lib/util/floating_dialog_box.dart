@@ -21,10 +21,11 @@ class FloatingDialogBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return AlertDialog(
       backgroundColor: Colors.grey[400],
       content: SizedBox(
-        height: 200,
+        height: screenSize.width * (250 / 375),
         child: Column(
           //defino como tudo se posicionará dentro do container em forma de coluna
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

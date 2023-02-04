@@ -10,9 +10,9 @@ class TodoDataBase {
   //roda esse método se essa for a primeira vez ever abrindo esse app
   void createInitalData() {
     listaTarefas = [
-      ["estudar Flutter", true, "finalizar os meus projetos pessoais"],
-      ["estudar Angular", false, "Ecommerce"],
-      ["Prova faculdade", false, "entregar a prova"]
+      // ["estudar Flutter", true, "finalizar os meus projetos pessoais"],
+      // ["estudar Angular", false, "Ecommerce"],
+      // ["Prova faculdade", false, "entregar a prova"]
     ];
   }
 

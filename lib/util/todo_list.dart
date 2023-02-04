@@ -33,7 +33,7 @@ class ToDoList extends StatelessWidget {
             SlidableAction(
               onPressed: deleteFunction,
               icon: Icons.delete,
-              backgroundColor: Colors.red.shade300,
+              backgroundColor: Colors.red.shade500,
               //borda circular pra ficar igual o container abaixo
               borderRadius: BorderRadius.circular(12),
             )
@@ -43,7 +43,8 @@ class ToDoList extends StatelessWidget {
           //padding dentro do container
           padding: const EdgeInsets.all(25.0),
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color:
+                isTaskCompleted ? Colors.green.shade400 : Colors.red.shade300,
             //arredondando as bordas
             borderRadius: BorderRadius.circular(12),
           ),
@@ -75,9 +76,11 @@ class ToDoList extends StatelessWidget {
                   Text(
                     taskDescription.toUpperCase(),
                     style: const TextStyle(fontSize: 10),
-                  )
+                  ),
                 ],
               ),
+              Spacer(),
+              Icon(isTaskCompleted ? Icons.favorite : Icons.heart_broken)
             ],
           ),
         ),
